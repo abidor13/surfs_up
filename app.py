@@ -45,11 +45,11 @@ app = Flask(__name__)
 def welcome():
     return(
     '''
-    Welcome to the Climate Analysis API!
-    Available Routes:
-    /api/v1.0/precipitation
-    /api/v1.0/stations
-    /api/v1.0/tobs
+    Welcome to the Climate Analysis API!<br/>
+    Available Routes:<br/>
+    /api/v1.0/precipitation<br/>
+    /api/v1.0/stations<br/>
+    /api/v1.0/tobs<br/>
     /api/v1.0/temp/start/end
     ''')  # When creating routes, we follow the naming convention /api/v1.0/
           #followed by the name of the route   
@@ -82,6 +82,7 @@ def stations():
     results = session.query(Station.station).all()
     stations = list(np.ravel(results))
     return jsonify(stations=stations)
+
 
 # Build Monthly Temperature Route:
 
@@ -123,5 +124,6 @@ def stats(start=None, end=None):
     temps = list(np.ravel(results))
     return jsonify(temps)
 
-# After running the flask run, we got a [null,null,null] answer
-# On the web browser fix the date to include a start/end date
+
+# # After running the flask run, we got a [null,null,null] answer.
+# # On the web browser fix the date to include a start/end date
