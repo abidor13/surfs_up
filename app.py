@@ -124,6 +124,8 @@ def stats(start=None, end=None):
     temps = list(np.ravel(results))
     return jsonify(temps)
 
+if __name__ == "__main__":
+    app.run(debug=True)
 
 # # After running the flask run, we got a [null,null,null] answer.
 # # On the web browser fix the date to include a start/end date
